@@ -1,0 +1,14 @@
+[
+{
+"firstname": "Veeresh",
+"emailAddress": "veereshpalacharla@gmail.com",
+"loginPassword": "veeru1259",
+"message": "Hello! World"
+},
+{
+"firstname": "Test",
+"emailAddress": "xyz@gmail.com",
+"loginPassword": "Test@123",
+"message": "This is a Test"
+}
+]

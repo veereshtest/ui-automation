@@ -37,7 +37,6 @@ public class SigninSignoutContactUsSteps {
 		PageFactory.initElements(driver, HomePage.class);
         PageFactory.initElements(driver, LoginPage.class);
         PageScroll.goto_Index();
-        Thread.sleep(30000);
         HomePage.signin_Link();
 		User user = JsonDataReader.getJsonReader().getUserByName(userName);
         LoginPage.fillin_details(user);

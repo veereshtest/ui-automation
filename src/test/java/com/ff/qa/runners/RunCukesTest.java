@@ -13,7 +13,7 @@ import cucumber.api.junit.Cucumber;
 	    		            "junit:target/cucumber-reports/Cucumber.xml",
 	    		            "html:target/cucumber-reports"},
 	    monochrome = true,
-		tags = {"@SmokeTest,@RegressionTest"}
+		tags = {"@SmokeTest,~@RegressionTest"}
 		)
 public class RunCukesTest {
 

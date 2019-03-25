@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -28,8 +29,12 @@ public class BrowserUtil {
 				else if(browser.equalsIgnoreCase("chrome")){
 					//create chrome instance
                     WebDriverManager.chromedriver().setup();
-					driver = new ChromeDriver();
-				}
+					//create chrome instance
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("–no-sandbox");
+                    options.addArguments("–disable-dev-shm-usage");
+                    driver = new ChromeDriver(options);
+                    }
 				//Check if parameter passed as 'Edge'
 						else if(browser.equalsIgnoreCase("Edge")){
 							//create Edge instance

@@ -1,4 +1,4 @@
-package utilities;
+package com.ff.qa.utilities;
 
 import java.util.concurrent.TimeUnit;
 
@@ -6,8 +6,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
-import helpers.ConfigFileReader;
+import com.ff.qa.helpers.ConfigFileReader;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BrowserUtil {
 	
@@ -17,21 +20,20 @@ public class BrowserUtil {
 		 ConfigFileReader configFileReader = new ConfigFileReader();
 			if(browser.equalsIgnoreCase("firefox")){
 				//create firefox instance
-				    System.setProperty("webdriver.gecko.driver", configFileReader.getDriverPath()+"geckodriver");
-					driver = new FirefoxDriver();
+					WebDriverManager.firefoxdriver().setup();
+                    FirefoxOptions options = new FirefoxOptions();
+				    driver = new FirefoxDriver(options);
 				}
 				//Check if parameter passed as 'chrome'
 				else if(browser.equalsIgnoreCase("chrome")){
-					//set path to chromedriver.exe
-					System.setProperty("webdriver.chrome.driver",  configFileReader.getDriverPath()+"chromedriver");
 					//create chrome instance
+                    WebDriverManager.chromedriver().setup();
 					driver = new ChromeDriver();
 				}
 				//Check if parameter passed as 'Edge'
 						else if(browser.equalsIgnoreCase("Edge")){
-							//set path to Edge.exe
-							System.setProperty("webdriver.edge.driver", configFileReader.getDriverPath()+"MicrosoftWebDriver.exe");
 							//create Edge instance
+							WebDriverManager.edgedriver().setup();
 							driver = new EdgeDriver();
 						}
 				else{

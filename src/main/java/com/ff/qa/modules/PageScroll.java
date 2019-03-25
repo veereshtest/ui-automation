@@ -1,7 +1,8 @@
-package modules;
+package com.ff.qa.modules;
 
 import org.openqa.selenium.JavascriptExecutor;
-import utilities.BrowserUtil;
+
+import com.ff.qa.utilities.BrowserUtil;
 
 
 public class PageScroll {

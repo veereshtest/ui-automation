@@ -1,4 +1,4 @@
-package helpers;
+package com.ff.qa.helpers;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -6,8 +6,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+
+import com.ff.qa.testDataTypes.User;
 import com.google.gson.Gson;
-import testDataTypes.User;
 
 public class JsonDataReader {
 private final String userFilePath = "src/test/resources/testData/" + "User.json";

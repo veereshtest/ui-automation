@@ -1,11 +1,11 @@
-package pageobjects;
+package com.ff.qa.pageobjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-import testDataTypes.User;
+import com.ff.qa.testDataTypes.User;
 
 public class LoginPage extends BaseClass {
 		

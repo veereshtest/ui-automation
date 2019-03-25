@@ -1,10 +1,11 @@
-package pageobjects;
+package com.ff.qa.pageobjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import modules.PageScroll;
+
+import com.ff.qa.modules.PageScroll;
 
 public class HomePage extends BaseClass {
 

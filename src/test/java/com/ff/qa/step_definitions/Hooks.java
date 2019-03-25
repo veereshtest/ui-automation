@@ -1,13 +1,15 @@
-package step_definitions;
+package com.ff.qa.step_definitions;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriverException;
+
+import com.ff.qa.helpers.ConfigFileReader;
+import com.ff.qa.utilities.BrowserUtil;
+
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import helpers.ConfigFileReader;
-import utilities.BrowserUtil;
 
 public class Hooks {	
 	ConfigFileReader configFileReader;

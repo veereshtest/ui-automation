@@ -1,19 +1,18 @@
-package step_definitions;
+package com.ff.qa.step_definitions;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import com.ff.qa.helpers.ConfigFileReader;
+import com.ff.qa.helpers.JsonDataReader;
+import com.ff.qa.modules.PageScroll;
+import com.ff.qa.modules.UploadFile;
+import com.ff.qa.pageobjects.ContactusPage;
+import com.ff.qa.pageobjects.HomePage;
+import com.ff.qa.pageobjects.LoginPage;
+import com.ff.qa.testDataTypes.User;
+import com.ff.qa.utilities.BrowserUtil;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import helpers.ConfigFileReader;
-import helpers.JsonDataReader;
-import modules.PageScroll;
-import modules.UploadFile;
-import pageobjects.ContactusPage;
-import pageobjects.HomePage;
-import pageobjects.LoginPage;
-import testDataTypes.User;
-import utilities.BrowserUtil;
-
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;

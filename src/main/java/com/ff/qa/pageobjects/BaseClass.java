@@ -1,4 +1,4 @@
-package pageobjects;
+package com.ff.qa.pageobjects;
 import org.openqa.selenium.WebDriver;
 
 public abstract class BaseClass {

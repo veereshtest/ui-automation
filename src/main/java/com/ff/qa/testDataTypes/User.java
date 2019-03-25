@@ -1,4 +1,4 @@
-package testDataTypes;
+package com.ff.qa.testDataTypes;
 
 
 public class User {

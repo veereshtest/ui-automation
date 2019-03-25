@@ -1,4 +1,4 @@
-package helpers;
+package com.ff.qa.helpers;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

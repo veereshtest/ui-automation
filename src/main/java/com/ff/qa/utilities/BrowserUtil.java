@@ -31,8 +31,6 @@ public class BrowserUtil {
                     WebDriverManager.chromedriver().setup();
 					//create chrome instance
                     ChromeOptions options = new ChromeOptions();
-                    options.addArguments("–no-sandbox");
-                    options.addArguments("–disable-dev-shm-usage");
                     driver = new ChromeDriver(options);
                     }
 				//Check if parameter passed as 'Edge'

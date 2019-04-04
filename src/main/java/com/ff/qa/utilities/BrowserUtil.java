@@ -10,6 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
 import com.ff.qa.helpers.ConfigFileReader;
+import com.ff.qa.helpers.Log;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -18,6 +19,7 @@ public class BrowserUtil {
 	public static WebDriver driver;
 	
 	 public static void getBrowser(String browser) throws Exception{
+		 Log.startLog("BrowserUtil");
 		 ConfigFileReader configFileReader = new ConfigFileReader();
 			if(browser.equalsIgnoreCase("firefox")){
 				//create firefox instance

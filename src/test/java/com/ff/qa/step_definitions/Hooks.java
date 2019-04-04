@@ -5,6 +5,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriverException;
 
 import com.ff.qa.helpers.ConfigFileReader;
+import com.ff.qa.helpers.Log;
 import com.ff.qa.utilities.BrowserUtil;
 
 import cucumber.api.Scenario;
@@ -41,6 +42,8 @@ public class Hooks {
         }
         
         }
+        Log.endLog("Hooks");
         BrowserUtil.driver.quit();
+        
     }
 }

@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import com.ff.qa.helpers.ConfigFileReader;
 import com.ff.qa.helpers.JsonDataReader;
+import com.ff.qa.helpers.Log;
 import com.ff.qa.modules.PageScroll;
 import com.ff.qa.modules.UploadFile;
 import com.ff.qa.pageobjects.ContactusPage;
@@ -26,8 +27,9 @@ public class SigninSignoutContactUsSteps {
 	public void i_open_automationpractice_website() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 		    configFileReader = new ConfigFileReader();
+		    Log.info("URL Loading");
 		    driver.get(configFileReader.getApplicationUrl());
-		    
+		    Log.info("URL Loaded");
 	}
 
 	@When("^I sign in using \"([^\"]*)\" login details$")
@@ -36,8 +38,10 @@ public class SigninSignoutContactUsSteps {
 		PageFactory.initElements(driver, HomePage.class);
         PageFactory.initElements(driver, LoginPage.class);
         PageScroll.goto_Index();
+        Log.info("Clicking Sign-in Link");
         HomePage.signin_Link();
 		User user = JsonDataReader.getJsonReader().getUserByName(userName);
+		Log.info("Fill Login Details");
         LoginPage.fillin_details(user);
 		LoginPage.submit();
 		
@@ -48,8 +52,8 @@ public class SigninSignoutContactUsSteps {
 	public void i_sign_out() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 		String actual = "Veeresh Palacharla";
-		//System.out.println(HomePage.account_name.getText());
 		assertThat(actual, is(equalTo(HomePage.get_Account())));
+		Log.info("Expected Result matched Actual");
 		HomePage.signout_Link();
 	}
 	
@@ -59,17 +63,20 @@ public class SigninSignoutContactUsSteps {
 	    // Write code here that turns the phrase above into concrete actions
 		PageFactory.initElements(driver, HomePage.class);
 		PageFactory.initElements(driver, ContactusPage.class);
+		Log.info("Clicking ContactUS Link");
 		HomePage.contactus_Link();
 		PageScroll.goto_Index();
 		ContactusPage.select_listvalue();
 		ContactusPage.enter_Email();
 		ContactusPage.enter_Reference();
 		ContactusPage.choose_file();
+		Log.info("Uploading File");
 		UploadFile.upload();
 		ContactusPage.type_message();
 		ContactusPage.click_send();	 
 		String actual = "Your message has been successfully sent to our team.";
 		assertThat(actual, is(equalTo(ContactusPage.verify_text())));
+		Log.info("Expected Result matched Actual");
 	}
 
 }

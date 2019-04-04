@@ -126,5 +126,6 @@ buildNumber.properties
 
 ### External Projects ###
 reference-projects/
+Log4j/
 
 # End of https://www.gitignore.io/api/git,java,maven,eclipse

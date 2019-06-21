@@ -18,7 +18,7 @@ public class BrowserUtil {
 	
 	public static WebDriver driver;
 	
-	 public static void getBrowser(String browser) throws Exception{
+	 public void initiateBrowser(String browser) throws Exception{
 		 Log.startLog("BrowserUtil");
 		 ConfigFileReader configFileReader = new ConfigFileReader();
 			if(browser.equalsIgnoreCase("firefox")){
@@ -36,14 +36,24 @@ public class BrowserUtil {
                     driver = new ChromeDriver(options);
                     }
 				//Check if parameter passed as 'Edge'
-						else if(browser.equalsIgnoreCase("Edge")){
+					else if(browser.equalsIgnoreCase("Edge")){
 							//create Edge instance
 							WebDriverManager.edgedriver().setup();
 							driver = new EdgeDriver();
 						}
+			   //Check if parameter passed as 'Edge'
+					else if(browser.equalsIgnoreCase("Headless")){
+							//create Edge instance
+						WebDriverManager.chromedriver().setup();
+						ChromeOptions options = new ChromeOptions();
+						options.addArguments("--headless");
+						options.addArguments("window-size=1200x600");
+	                    driver = new ChromeDriver(options);
+						}
+			
 				else{
 					//If no browser passed throw exception
-					throw new Exception("Browser is not correct");
+					throw new Exception("Browser is not supported");
 				}
 			
 			driver.manage().deleteAllCookies();

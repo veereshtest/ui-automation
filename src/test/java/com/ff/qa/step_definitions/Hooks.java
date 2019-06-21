@@ -14,6 +14,7 @@ import cucumber.api.java.Before;
 
 public class Hooks {	
 	ConfigFileReader configFileReader;
+	BrowserUtil browserUtil;
    
 	@Before
     /**
@@ -22,7 +23,8 @@ public class Hooks {
      */
 	public void openBrowser() throws Exception {
 		configFileReader = new ConfigFileReader();
-	    BrowserUtil.getBrowser(configFileReader.getBrowserType()); 
+		browserUtil =  new BrowserUtil();
+	    browserUtil.initiateBrowser(configFileReader.getBrowserType()); 
 	}
 	
 	@After
